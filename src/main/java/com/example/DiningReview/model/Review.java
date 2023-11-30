@@ -1,25 +1,31 @@
 package com.example.DiningReview.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Null;
 import lombok.Getter;
 
 @Entity
-@Table(name="RESTAURANTS")
-public class Restaurant {
+@Table(name="REVIEWS")
+public class Review {
 
     @Id
     @GeneratedValue
     @Getter
-    private Long restaurantId;
+    private Long reviewId;
 
-    @Column(name="RESTAURANT_NAME")
+    @Column(name="REVIEWER_NAME")
     @Getter
     private String name;
 
+    @Column(name="RESTAURANT_ID")
+    @Getter
+    private Long restaurantId;
+
     @Column(name="SCORE_PEANUT")
-    @Min (value = 1)
-    @Max (value = 5)
+    @Min(value = 1)
+    @Max(value = 5)
     @Null
     @Getter
     private Integer scorePeanut;
@@ -46,27 +52,12 @@ public class Restaurant {
     private Integer scoreAverage;
 
     //Setters.
-    public void setId(Long restaurantId) {
-        this.restaurantId = restaurantId;
+    public void setId(Long reviewId) {
+        this.reviewId = reviewId;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setScorePeanut(Integer scorePeanut) {
-        this.scorePeanut = scorePeanut;
-    }
-
-    public void setScoreEgg(Integer scoreEgg) {
-        this.scoreEgg = scoreEgg;
-    }
-
-    public void setScoreDairy(Integer scoreDairy) {
-        this.scoreDairy = scoreDairy;
-    }
-
-    public void setScoreAverage(Integer scoreAverage) {
-        this.scoreAverage = scoreAverage;
-    }
 }
