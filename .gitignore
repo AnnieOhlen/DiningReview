@@ -1,0 +1,54 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Compiled bytecode ###
+*.class
+
+### Maven ###
+.mvn/
+mvnw
+mvnw.cmd
+mvn_wrapper/
+
+### Spring Boot ###
+spring-boot-starter/target/
+spring-boot-starter.iml
+
+### Lombok ###
+*.lombok
+
+### H2 Database ###
+*.db
+# TODO: Remove this entry before sharing the project publicly.
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
