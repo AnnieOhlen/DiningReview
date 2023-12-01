@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 
+@Getter
 @Entity
 @Table(name="RESTAURANTS")
 public class Restaurant {
@@ -13,42 +14,33 @@ public class Restaurant {
     private Long restaurantId;
 
     @Column(name="RESTAURANT_NAME")
-    @Getter
     private String name;
 
     @Column(name="SCORE_PEANUT")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scorePeanut;
 
     @Column(name="SCORE_EGG")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scoreEgg;
 
     @Column(name="SCORE_DAIRY")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scoreDairy;
 
     @Column(name="SCORE_AVERAGE")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scoreAverage;
 
     //Setters.
-    public Long getId() {
-        return this.restaurantId;
-    }
-
     public void setId(Long restaurantId) {
         this.restaurantId = restaurantId;
     }
