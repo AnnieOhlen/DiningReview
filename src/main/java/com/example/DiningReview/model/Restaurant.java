@@ -4,45 +4,40 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 
+@Getter
 @Entity
 @Table(name="RESTAURANTS")
 public class Restaurant {
 
     @Id
     @GeneratedValue
-    @Getter
     private Long restaurantId;
 
     @Column(name="RESTAURANT_NAME")
-    @Getter
     private String name;
 
     @Column(name="SCORE_PEANUT")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scorePeanut;
 
     @Column(name="SCORE_EGG")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scoreEgg;
 
     @Column(name="SCORE_DAIRY")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scoreDairy;
 
     @Column(name="SCORE_AVERAGE")
     @Min (value = 1)
     @Max (value = 5)
     @Null
-    @Getter
     private Integer scoreAverage;
 
     //Setters.
