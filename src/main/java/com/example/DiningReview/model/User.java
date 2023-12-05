@@ -2,11 +2,9 @@ package com.example.DiningReview.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name="USERS", uniqueConstraints = @UniqueConstraint(columnNames = {"USER_NAME"}))
 public class User {
