@@ -13,7 +13,7 @@ public class User {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long userId;
 
     @Column(name="USER_NAME")
     @Size(min=3, max=20, message="Username must be between 3 and 20 characters long.")
