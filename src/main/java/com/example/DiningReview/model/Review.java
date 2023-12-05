@@ -44,4 +44,14 @@ public class Review {
     @Column(name="REVIEW_COMMENTARY")
     @Null
     private String reviewCommentary;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name="REVIEW_STATUS")
+    private ReviewStatus status;
+
+    public enum ReviewStatus {
+        PENDING,
+        APPROVED,
+        REJECTED
+    }
 }
