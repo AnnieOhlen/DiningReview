@@ -1,5 +1,8 @@
 package com.example.DiningReview.repository;
 
-public class UserRepository {
+import com.example.DiningReview.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }
