@@ -14,7 +14,8 @@ public class Restaurant {
     private Long restaurantId;
 
     @Column(name="RESTAURANT_NAME")
-    private String name;
+    @NotBlank(message="Restaurant name is required.")
+    private String restaurantName;
 
     @Column(name="SCORE_PEANUT")
     @Min (value = 1)
@@ -45,8 +46,8 @@ public class Restaurant {
         this.restaurantId = restaurantId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String restaurantName) {
+        this.restaurantName = restaurantName;
     }
 
     public void setScorePeanut(Integer scorePeanut) {

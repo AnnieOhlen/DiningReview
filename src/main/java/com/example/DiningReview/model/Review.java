@@ -19,6 +19,8 @@ public class Review {
     private String name;
 
     @Column(name="RESTAURANT_ID")
+    @NotNull(message="Restaurant ID must not be null.")
+    @NotBlank(message="Restaurant ID is required.")
     private Long restaurantId;
 
     @Column(name="SCORE_PEANUT")
