@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
 
+    List<Review> findByStatus(Review.ReviewStatus reviewStatus);
 
-    public List<Review> findByRestaurant(String restaurant);
+    //TODO currently causes error "restaurant", what should the implementation be?
+    //public List<Review> findByRestaurant(String restaurant);
 
 }
