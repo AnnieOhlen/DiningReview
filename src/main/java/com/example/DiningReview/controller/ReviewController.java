@@ -29,9 +29,8 @@ public class ReviewController {
     }
 
     //TODO As an admin, I want to approve or reject a given dining review.
-
-    //TODO As part of the backend process that updates a restaurant's set of scores, I want to fetch the set of all approved dining reviews belonging to this restaurant.
-
+    
     //TODO As part of the backend process that updates a restaurant's set of scores,
     // I want to fetch the set of all approved dining reviews belonging to this restaurant.
+
 }
