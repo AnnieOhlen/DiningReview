@@ -14,20 +14,16 @@ public class User {
     private Long userId;
 
     @Column(name="USER_NAME")
-    @Size(min=3, max=20, message="Username must be between 3 and 20 characters long.")
+    @Size(min=3, max=20)
     private String username;
 
     @Column(name="CITY")
-    @NotBlank(message="City is required.")
     private String city;
 
     @Column(name="STATE")
-    @NotBlank(message="State is required.")
     private String state;
 
     @Column(name="ZIP_CODE")
-    @NotNull(message="Zip code must not be null.")
-    @NotBlank(message="Zip code is required.")
     private Integer zipCode;
 
     @Column(name="ALLERGY_PEANUT")

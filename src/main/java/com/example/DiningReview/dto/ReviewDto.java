@@ -16,16 +16,16 @@ public class ReviewDto {
     @NotBlank(message="Restaurant ID is required.")
     private Long restaurantId;
 
-    @Min(value = 1)
-    @Max(value = 5)
+    @Min(value = 1, message = "Score must be at least 1")
+    @Max(value = 5, message = "Score must be at most 5")
     private Integer scorePeanut;
 
-    @Min(value = 1)
-    @Max(value = 5)
+    @Min(value = 1, message = "Score must be at least 1")
+    @Max(value = 5, message = "Score must be at most 5")
     private Integer scoreEgg;
 
-    @Min(value = 1)
-    @Max(value = 5)
+    @Min(value = 1, message = "Score must be at least 1")
+    @Max(value = 5, message = "Score must be at most 5")
     private Integer scoreDairy;
 
     @Null
@@ -39,4 +39,5 @@ public class ReviewDto {
         APPROVED,
         REJECTED
     }
+
 }

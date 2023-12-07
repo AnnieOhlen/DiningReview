@@ -2,9 +2,9 @@ package com.example.DiningReview.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 @Entity
 @Table(name="RESTAURANTS")
 public class Restaurant {
@@ -14,55 +14,26 @@ public class Restaurant {
     private Long restaurantId;
 
     @Column(name="RESTAURANT_NAME")
-    @NotBlank(message="Restaurant name is required.")
+    @NotBlank
     private String restaurantName;
 
     @Column(name="SCORE_PEANUT")
     @Min (value = 1)
     @Max (value = 5)
-    @Null
     private Integer scorePeanut;
 
     @Column(name="SCORE_EGG")
     @Min (value = 1)
     @Max (value = 5)
-    @Null
     private Integer scoreEgg;
 
     @Column(name="SCORE_DAIRY")
     @Min (value = 1)
     @Max (value = 5)
-    @Null
     private Integer scoreDairy;
 
     @Column(name="SCORE_AVERAGE")
     @Min (value = 1)
     @Max (value = 5)
-    @Null
     private Integer scoreAverage;
-
-    //Setters.
-    public void setId(Long restaurantId) {
-        this.restaurantId = restaurantId;
-    }
-
-    public void setName(String restaurantName) {
-        this.restaurantName = restaurantName;
-    }
-
-    public void setScorePeanut(Integer scorePeanut) {
-        this.scorePeanut = scorePeanut;
-    }
-
-    public void setScoreEgg(Integer scoreEgg) {
-        this.scoreEgg = scoreEgg;
-    }
-
-    public void setScoreDairy(Integer scoreDairy) {
-        this.scoreDairy = scoreDairy;
-    }
-
-    public void setScoreAverage(Integer scoreAverage) {
-        this.scoreAverage = scoreAverage;
-    }
 }
