@@ -1,5 +1,6 @@
 package com.example.DiningReview.controller;
 
+import com.example.DiningReview.model.AdminReview;
 import com.example.DiningReview.model.Review;
 import com.example.DiningReview.repository.ReviewRepository;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,11 @@ public class ReviewController {
     @GetMapping("/pending")
     public List<Review> getReviewsPending() {
         return reviewRepository.findByStatus(Review.ReviewStatus.PENDING);
+    }
+
+    @GetMapping("/{restaurantId}")
+    public List<Review> getReviewsRestaurant(@PathVariable Long restaurantId) {
+        return reviewRepository.findByRestaurant(restaurantId);
     }
 
     //TODO As an admin, I want to approve or reject a given dining review.

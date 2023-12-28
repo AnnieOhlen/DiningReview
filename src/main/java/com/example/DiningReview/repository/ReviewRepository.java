@@ -9,7 +9,5 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     List<Review> findByStatus(Review.ReviewStatus reviewStatus);
 
-    //TODO currently causes error "restaurant", what should the implementation be?
-    //public List<Review> findByRestaurant(String restaurant);
-
+    List<Review> findByRestaurant(Long restaurantId);
 }
