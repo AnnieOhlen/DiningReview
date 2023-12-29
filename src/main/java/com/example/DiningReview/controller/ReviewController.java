@@ -17,13 +17,11 @@ public class ReviewController {
         this.reviewRepository = reviewRepo;
     }
 
-    //Registered user: submit a dining review.
     @PostMapping
     public Review postReview(@RequestBody Review review) {
         return this.reviewRepository.save(review);
     }
 
-    //Admin: get the list of all dining reviews that are pending approval.
     @GetMapping("/pending")
     public List<Review> getReviewsPending() {
         return reviewRepository.findByStatus(Review.ReviewStatus.PENDING);
