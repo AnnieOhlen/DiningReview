@@ -14,6 +14,9 @@ public class ReviewService {
     @Autowired
     private ReviewRepository reviewRepository;
 
+
+    //TODO: Coordinate with repository for submitting, approving/rejecting and fetching reviews.
+
     public List<Review> getAllReviews() {
         throw new NotImplementedException("Method not implemented");
         //TODO Convert entities to DTOs or perform additional business logic
