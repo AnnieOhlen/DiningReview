@@ -1,12 +1,11 @@
 package com.example.DiningReview.service;
 
+import com.example.DiningReview.mapping.ReviewMapper;
 import com.example.DiningReview.model.Review;
 import com.example.DiningReview.dto.ReviewDto;
 import com.example.DiningReview.repository.ReviewRepository;
-import mapper.ReviewMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 public class ReviewService {
@@ -22,9 +21,9 @@ public class ReviewService {
     }
 
     public ReviewDto submitReview(ReviewDto reviewDto) {
-        Review review = reviewMapper.toEntity(reviewDto);
+        Review review = reviewMapper.dtoToModel(reviewDto);
         Review savedReview = reviewRepository.save(review);
-        return reviewMapper.toDto(savedReview);
+        return reviewMapper.modelToDto(savedReview);
     }
 
 //    public List<ReviewDto> getAllReviews() {
