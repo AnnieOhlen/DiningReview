@@ -16,12 +16,12 @@ public class ReviewController {
 
     private final ReviewRepository reviewRepository;
 
-    public ReviewController(ReviewRepository reviewRepo) {
-        this.reviewRepository = reviewRepo;
-    }
+    private final ReviewService reviewService;
 
-    @Autowired
-    private ReviewService reviewService;
+    public ReviewController(ReviewRepository reviewRepo, ReviewService reviewService) {
+        this.reviewRepository = reviewRepo;
+        this.reviewService = reviewService;
+    }
 
     @GetMapping
     public List<Review> getReviews() {
