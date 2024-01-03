@@ -1,8 +1,11 @@
 package com.example.DiningReview.controller;
 
-import com.example.DiningReview.model.AdminReview;
+import com.example.DiningReview.dto.ReviewDto;
 import com.example.DiningReview.model.Review;
 import com.example.DiningReview.repository.ReviewRepository;
+import com.example.DiningReview.service.ReviewService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,9 +20,25 @@ public class ReviewController {
         this.reviewRepository = reviewRepo;
     }
 
+    @Autowired
+    private ReviewService reviewService;
+
+    @GetMapping
+    public List<Review> getReviews() {
+        return reviewRepository.findAll();
+    }
+
     @PostMapping
     public Review postReview(@RequestBody Review review) {
         return this.reviewRepository.save(review);
+    }
+
+    @PostMapping("/submit")
+    public ResponseEntity<String> submitDiningReview(
+            @RequestParam Long userId,
+            @RequestBody ReviewDto reviewDto) {
+        Long reviewId = reviewService.submitReview(reviewDto);
+        return ResponseEntity.ok("Review submitted successfully with ID: " + reviewId);
     }
 
     @GetMapping("/pending")
