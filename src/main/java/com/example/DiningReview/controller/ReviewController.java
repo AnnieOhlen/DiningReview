@@ -18,8 +18,9 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    public ReviewController(ReviewRepository reviewRepo, ReviewService reviewService) {
-        this.reviewRepository = reviewRepo;
+    @Autowired
+    public ReviewController(ReviewRepository reviewRepository, ReviewService reviewService) {
+        this.reviewRepository = reviewRepository;
         this.reviewService = reviewService;
     }
 
@@ -37,7 +38,7 @@ public class ReviewController {
     public ResponseEntity<String> submitDiningReview(
             @RequestParam Long userId,
             @RequestBody ReviewDto reviewDto) {
-        Long reviewId = reviewService.submitReview(reviewDto);
+        ReviewDto reviewId = reviewService.submitReview(reviewDto);
         return ResponseEntity.ok("Review submitted successfully with ID: " + reviewId);
     }
 
@@ -46,10 +47,10 @@ public class ReviewController {
         return reviewRepository.findByStatus(Review.ReviewStatus.PENDING);
     }
 
-    @GetMapping("/{restaurantId}")
-    public List<Review> getReviewsRestaurant(@PathVariable Long restaurantId) {
-        return reviewRepository.findByRestaurant(restaurantId);
-    }
+//    @GetMapping("/{restaurantId}")
+//    public List<Review> getReviewsRestaurant(@PathVariable Long restaurantId) {
+//        return reviewRepository.findByRestaurant(restaurantId);
+//    }
 
     //TODO As an admin, I want to approve or reject a given dining review.
     
