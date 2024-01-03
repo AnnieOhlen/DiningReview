@@ -3,6 +3,7 @@ package com.example.DiningReview.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.Getter;
 
 @Data
 @Entity
@@ -40,9 +41,34 @@ public class Review {
     @Null
     private String reviewCommentary;
 
+    @Getter
     @Enumerated(EnumType.STRING)
     @Column(name="REVIEW_STATUS")
     private ReviewStatus status;
+
+//    protected Review() {
+//        //Default constructor for JPA
+//    }
+//
+//    public Review(String name, Long restaurantId, Integer scorePeanut, Integer scoreEgg, Integer scoreDairy,
+//                  String reviewCommentary) {
+//        this.name = name;
+//        this.restaurantId = restaurantId;
+//        this.scorePeanut = scorePeanut;
+//        this.scoreEgg = scoreEgg;
+//        this.scoreDairy = scoreDairy;
+//        this.reviewCommentary = reviewCommentary;
+//
+//        //Set default for new reviews
+//        this.status = ReviewStatus.PENDING;
+//    }
+
+    @PrePersist
+    public void prePersist() {
+        if (status == null) {
+            status = ReviewStatus.PENDING;
+        }
+    }
 
     public enum ReviewStatus {
         PENDING,

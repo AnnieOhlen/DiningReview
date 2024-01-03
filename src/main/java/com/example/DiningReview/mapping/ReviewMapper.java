@@ -13,7 +13,7 @@ public interface ReviewMapper {
 
     ReviewMapper INSTANCE = Mappers.getMapper(ReviewMapper.class);
 
-    @Mapping(target = "reviewId", ignore = true) // Ignore reviewId during conversion (auto-generated).
+    @Mapping(target = "reviewId", ignore = true) // Ignore id during conversion (auto-generated).
 
     ReviewDto modelToDto(Review review);
 
