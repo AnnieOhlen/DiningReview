@@ -8,7 +8,7 @@ public class UserDto {
 
     private Long userId;
 
-    @Size(min=3, max=20, message="Username must be between 3 and 20 characters long.")
+    @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters long.")
     private String username;
 
     private String city;

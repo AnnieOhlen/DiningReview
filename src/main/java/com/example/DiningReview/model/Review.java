@@ -15,11 +15,11 @@ public class Review {
     private Long reviewId;
 
     @Column(name="REVIEWER_NAME")
-    private String name;
+    @NotNull
+    private String reviewerName;
 
     @Column(name="RESTAURANT_ID")
     @NotNull
-    @NotBlank
     private Long restaurantId;
 
     @Column(name="SCORE_PEANUT")
@@ -38,7 +38,6 @@ public class Review {
     private Integer scoreDairy;
 
     @Column(name="REVIEW_COMMENTARY")
-    @Null
     private String reviewCommentary;
 
     @Getter
@@ -46,22 +45,22 @@ public class Review {
     @Column(name="REVIEW_STATUS")
     private ReviewStatus status;
 
-//    protected Review() {
-//        //Default constructor for JPA
-//    }
-//
-//    public Review(String name, Long restaurantId, Integer scorePeanut, Integer scoreEgg, Integer scoreDairy,
-//                  String reviewCommentary) {
-//        this.name = name;
-//        this.restaurantId = restaurantId;
-//        this.scorePeanut = scorePeanut;
-//        this.scoreEgg = scoreEgg;
-//        this.scoreDairy = scoreDairy;
-//        this.reviewCommentary = reviewCommentary;
-//
-//        //Set default for new reviews
-//        this.status = ReviewStatus.PENDING;
-//    }
+    protected Review() {
+        //Default constructor for JPA
+    }
+
+    public Review(String reviewerName, Long restaurantId, Integer scorePeanut, Integer scoreEgg, Integer scoreDairy,
+                  String reviewCommentary) {
+        this.reviewerName = reviewerName;
+        this.restaurantId = restaurantId;
+        this.scorePeanut = scorePeanut;
+        this.scoreEgg = scoreEgg;
+        this.scoreDairy = scoreDairy;
+        this.reviewCommentary = reviewCommentary;
+
+        //Set default for new reviews
+        this.status = ReviewStatus.PENDING;
+    }
 
     @PrePersist
     public void prePersist() {

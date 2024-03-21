@@ -10,10 +10,9 @@ public class ReviewDto {
 
     private Long reviewId;
 
-    private String name;
+    private String reviewerName;
 
     @NotNull(message="Restaurant ID must not be null.")
-    @NotBlank(message="Restaurant ID is required.")
     private Long restaurantId;
 
     @Min(value = 1, message = "Score must be at least 1")
@@ -28,7 +27,6 @@ public class ReviewDto {
     @Max(value = 5, message = "Score must be at most 5")
     private Integer scoreDairy;
 
-    @Null
     private String reviewCommentary;
 
     @Enumerated(EnumType.STRING)

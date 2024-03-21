@@ -11,12 +11,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserRepository userRepository;
     private final UserService userService;
 
     @Autowired
-    public UserController(UserRepository userRepository, UserService userService) {
-        this.userRepository = userRepository;
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -25,5 +23,7 @@ public class UserController {
         UserDto userId = userService.registerUser(userDto);
         return ResponseEntity.ok("User created successfully with ID: " + userId);
     }
+
+
 
 }

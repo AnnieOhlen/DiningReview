@@ -14,7 +14,6 @@ public interface UserMapper {
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
     @Mapping(target = "userId", ignore = true) // Ignore id during conversion (auto-generated).
-
     UserDto modelToDto(User user);
 
     User dtoToModel(UserDto userDto);
