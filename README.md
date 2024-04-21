@@ -94,3 +94,4 @@ Set-ExecutionPolicy RemoteSigned
 * The tests will be using Unit 5 and Mockito.
 * Expand upon the restaurant model/dto to include zip code.
 * Improve the search functionality for zip code and allergy.
+* Suggestions by CodeCademy: user model includes properties representing whether they’re interested in a particular allergy. Possibly enable a new search scenario that returns the set of restaurants that match the user’s particular interests.
