@@ -1,6 +1,8 @@
 # DiningReview
 Spring portfolio project for CodeCademy course:  
-*https://www.codecademy.com/learn/paths/create-rest-apis-with-spring-and-java*
+*https://www.codecademy.com/learn/paths/create-rest-apis-with-spring-and-java*  
+  
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AnnieOhlen_DiningReview&metric=alert_status&token=c791a9e51e92a015dc62c15afe91db4452f2f5d2)](https://sonarcloud.io/summary/new_code?id=AnnieOhlen_DiningReview)
 
 ## Description
 This project is a simple REST API for a restaurant review site.  
